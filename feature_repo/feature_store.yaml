@@ -1,9 +1,24 @@
+# project: credit_scoring_local
+# registry: data/registry.db
+# provider: local
+# online_store:
+#    type: sqlite
+#    path: data/online_store.db
+# offline_store:
+#     type: file
+# entity_key_serialization_version: 3
 project: credit_scoring_local
 registry: data/registry.db
 provider: local
 online_store:
-   type: sqlite
-   path: data/online_store.db
+  type: redis
+  connection_string: "feast-redis.default.svc.cluster.local:6379"
 offline_store:
-    type: file
+    type: postgres
+    host: postgres-customer.default.svc.cluster.local
+    port: 5432
+    database: credit_risk
+    db_schema: public
+    user: feastuser
+    password: feastpass
 entity_key_serialization_version: 3
