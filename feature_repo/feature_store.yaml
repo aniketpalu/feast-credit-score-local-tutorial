@@ -17,7 +17,7 @@ offline_store:
     type: postgres
     host: postgres-customer.default.svc.cluster.local
     port: 5432
-    database: credit_risk
+    database: creditrisk
     db_schema: public
     user: feastuser
     password: feastpass
